@@ -7,14 +7,26 @@ import {
 import Task from "../Task/Task";
 export default function Column({ tasks }) {
     return (
-        <div className="column mt-12">
+        <div className="column mt-12 gap-y-4">
             <SortableContext
                 items={tasks}
                 strategy={verticalListSortingStrategy}
             >
-                {tasks.map((item, id) => (
-                    <Task key={item.id} title={item.title} id={item.id} />
-                ))}
+                {tasks?.length === 0 ? (
+                    <div className="text-center">
+                        Aucune tache disponible 😻
+                    </div>
+                ) : (
+                    <div className="py-3">
+                        {tasks.map((item, id) => (
+                            <Task
+                                key={item.id}
+                                title={item.title}
+                                id={item.id}
+                            />
+                        ))}
+                    </div>
+                )}
             </SortableContext>
         </div>
     );

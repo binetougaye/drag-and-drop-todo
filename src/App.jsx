@@ -42,6 +42,7 @@ function App() {
     const addTask = (title) => {
         setTask((tasks) => [...tasks, { id: tasks.length + 1, title }]);
     };
+
     return (
         <DndContext
             sensors={sensors}
@@ -50,6 +51,7 @@ function App() {
         >
             <div className="absolute inset-0 -z-10 size-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
                 <div className="absolute inset-x-0 top-0 -z-10 m-auto size-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]" />
+
                 <div className="flex justify-center items-center flex-col">
                     <h1 className="text-4xl">My Tasks ✔ </h1>
                     <Input onSubmit={addTask} />

@@ -15,7 +15,7 @@ export default function Task({ id, title }) {
             {...attributes}
             {...listeners}
             style={style}
-            className="text-center task"
+            className="text-center p task"
         >
             {title}
         </div>
